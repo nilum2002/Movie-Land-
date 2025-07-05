@@ -14,20 +14,25 @@
 }
 
 body {
-  display: flex;
-  /* justify-content: center; */
+  margin: 0; 
+  padding: 0; 
+  margin-top: -13rem;
   font-family: var(--font-roboto);
   background-color: #212426;
-  padding-top : 50px;
+  min-height: 100vh; 
+  display: flex; 
+  justify-content: center; /* Center the root div (which contains .App) horizontally */
+  align-items: center; /* Center the root div vertically */
 }
 
-.app {
+.App {
   padding: 4rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 h1 {
@@ -41,11 +46,13 @@ h1 {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  width: fit-content;
+  text-align: center;
+  width: 100%;
 }
 
 .search {
   width: 100%;
+  max-width: 600px;
   margin: 4rem 0 2rem;
 
   display: flex;
@@ -57,8 +64,13 @@ h1 {
   background: #1f2123;
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
+  border: 1px solid #2d3032;
+  transition: all 0.3s ease;
 }
 
+.search:hover {
+  box-shadow: 7px 7px 7px #1a1c1e, -7px -7px 7px #24282a;
+}
 .search input {
   flex: 1;
   border: none;
