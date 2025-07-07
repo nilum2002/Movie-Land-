@@ -1,3 +1,8 @@
+# Functional movie search web for Beginners  
+![alt text](src\img\image.png)
+Best handson practice for beginners in React 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
