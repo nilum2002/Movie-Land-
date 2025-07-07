@@ -1,5 +1,6 @@
 # Functional movie search web for Beginners  
-![alt text](src\img\image.png)
+![Screenshot 2025-07-07 232323](https://github.com/user-attachments/assets/94ea5e10-1af9-4867-bf01-d615701a51b7)
+
 Best handson practice for beginners in React 
 
 
