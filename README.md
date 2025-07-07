@@ -1,6 +1,6 @@
 # Functional movie search web for Beginners  
 ![alt text](src\img\image.png)
-Best handson practice for beginners in React 
+Best hand-on practice for beginners in React 
 
 
 # Getting Started with Create React App
