@@ -15,18 +15,23 @@
 body {
   font-family: var(--font-roboto);
   background-color: #212426;
-  display: flex; /* Added for centering */
-  justify-content: center; /* Added for horizontal centering */
-  align-items: center; /* Added for vertical centering */
-  min-height: 100vh; /* Ensures body takes full viewport height */
+  display: flex;
+  justify-content: center; /* Centers the .app container horizontally */
+  align-items: flex-start; /* Aligns content to the top of the viewport */
+  min-height: 100vh;
+  padding-top: 4rem; /* Added padding to push content down from the very top */
+  width: 100%; /* Ensure body takes full width */
+  overflow-x: hidden; /* Prevent horizontal scrollbar from body */
 }
 
 .app {
-  padding: 4rem;
-
+  padding: 0 4rem; /* Adjusted padding to allow full width for content */
+  width: 100%; /* Ensure app takes full width */
+  max-width: 1200px; /* Optional: Set a max-width for the app container */
+  margin: 0 auto; /* Explicitly center the .app container within the body */
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Centers children horizontally within the .app */
+  align-items: center; /* Aligns children (h1, search, container) in the center of the cross-axis */
   flex-direction: column;
 }
 
@@ -42,25 +47,22 @@ h1 {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 auto 4rem; /* Centers the h1 and adds bottom margin */
   text-align: center;
-  padding-top: 50px;
-
-  
 }
 
 .search {
-  width: 700px;
+  width: 100%; /* Make search bar take full width of its parent (.app) */
+  max-width: 700px; /* Set a maximum width for the search bar */
   height: 75px;
-  margin: 4rem 0 2rem;
+  margin: 0 auto 2rem; /* Centers the search bar horizontally within .app and adds bottom margin */
 
   display: flex;
-  
   align-items: center;
-  justify-content: center;
+  justify-content: center; /* Keep content centered within the search bar */
 
   padding: 1.5rem 1.75rem;
-  border-radius:5rem;
+  border-radius: 5rem;
   background: #1f2123;
   -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
   box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
@@ -83,23 +85,8 @@ h1 {
   width: 35px;
   height: 35px;
   cursor: pointer;
-  color :aqua
+  color: aqua; /* Note: `color` won't affect SVG `fill` or `stroke` directly unless it's an SVG icon that inherits `currentColor` */
 }
-
-/* .search button {
-  padding: 20px 40px;
-  border-radius: 0.5rem;
-  margin-left: 15px;
-  color: #a1a1a1;
-  font-family: var(--font-raleway);
-  font-weight: 900;
-  letter-spacing: 0.75px;
-  font-size: 1.25rem;
-  cursor: pointer;
-  background: #1f2123;
-  -webkit-box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-  box-shadow: 5px 5px 7px #1c1d1f, -5px -5px 7px #222527;
-} */
 
 .empty {
   width: 100%;
@@ -121,15 +108,16 @@ h1 {
   margin-top: 3rem;
 
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* Center the movie cards within the container */
+  align-items: flex-start; /* Align items to the top */
   flex-wrap: wrap;
+  gap: 1.5rem; /* Added gap for spacing between movie cards */
 }
 
 .movie {
   width: 310px;
   height: 460px;
-  margin: 1.5rem;
+  /* margin: 1.5rem; Removed individual margin as gap handles it */
 
   position: relative;
   border-radius: 12px;
@@ -162,6 +150,7 @@ h1 {
 .movie div:nth-of-type(2) img {
   height: 100%;
   width: 100%;
+  object-fit: cover; /* Ensure images cover the area without distortion */
 }
 
 .movie div:nth-of-type(3) {
@@ -205,7 +194,7 @@ h1 {
 
 @media screen and (max-width: 600px) {
   .app {
-    padding: 4rem 2rem;
+    padding: 4rem 1rem; /* Adjusted padding for smaller screens */
   }
 
   .search {
@@ -224,10 +213,6 @@ h1 {
 }
 
 @media screen and (max-width: 400px) {
-  .app {
-    padding: 4rem 1rem;
-  }
-
   h1 {
     font-size: 2rem;
   }
@@ -237,7 +222,7 @@ h1 {
   }
 
   .movie {
-    width: "100%";
-    margin: 1rem;
+    width: 90%; /* Adjusted width for very small screens to prevent overflow */
+    margin: 1rem auto; /* Center individual movie cards */
   }
 }
