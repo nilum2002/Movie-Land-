@@ -36,7 +36,13 @@ function App() {
           <div>
             <img src = { movie.Poster !== 'N/A' ? movie.Poster: 'https://via.placeholder.com/400'} alt = {movie.Title}></img>
           </div>
+          <div>
+          <span>{movie.Type} </span>
         </div>
+        </div>
+
+
+        
       </div>
 
     </div>
